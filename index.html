@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MD Soluções Digitais | Mais clientes para sua retífica de cabeçote</title>
+<meta name="description" content="Receba mais orçamentos todos os dias. A MD Soluções Digitais coloca sua retífica de cabeçote no Google para quem está procurando o seu serviço.">
+<meta property="og:title" content="Mais clientes para sua retífica de cabeçote">
+<meta property="og:description" content="Apareça no Google quando clientes procuram por retífica de cabeçote.">
+<meta property="og:image" content="https://retifica.onlecompany.com/logo-md.png">
+<link rel="icon" href="logo-md.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+/* ===================== CONFIGURAÇÃO ===================== */
+window.CFG = {
+  ENDPOINT: "",                  // URL do App da Web do Apps Script (grava na planilha)
+  CALENDAR_URL: "",              // link da página de agendamento do Google Calendar
+  WHATSAPP: "5535991495790",     // número que recebe o lead
+  PIXEL_ID: "",                  // pixel da Meta da conta MD
+  VERBA_MINIMA: "R$ 3.000,00"    // verba mínima de anúncio citada na tela de alinhamento
+};
+</script>
+<style>
+:root{--navy:#102A44;--navy2:#1C3B58;--vinho:#7C1E2B;--vinho2:#9A2A38;--txt:#1B2A38;--txt2:#41505C;--muted:#8C949C;
+  --bg:#FFFFFF;--soft:#EDF1F5;--soft2:#D5DFE8;--line:#DFDFDF;--card:#F6F8FA}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg)}
+body{font-family:Manrope,system-ui,sans-serif;color:var(--txt);-webkit-font-smoothing:antialiased;min-height:100vh}
+button,input{font-family:inherit}
+header{border-bottom:1px solid var(--line);background:#fff}
+header .in{max-width:576px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:center;gap:12px}
+header img{width:46px;height:46px;border-radius:10px}
+header b{font-weight:800;color:var(--navy);font-size:17px;line-height:1.1}
+header b small{display:block;font-weight:600;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--vinho)}
+.prog{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.95);backdrop-filter:blur(6px)}
+.prog .in{max-width:576px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px}
+.bar{flex:1;height:8px;border-radius:99px;background:var(--soft);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--vinho);border-radius:99px;transition:width .5s ease}
+.prog span{font-size:12px;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums;min-width:34px;text-align:right}
+main{max-width:576px;margin:0 auto;padding:26px 16px 64px}
+.step{display:none;animation:in .35s ease}
+.step.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.center{text-align:center}
+.icons{display:flex;justify-content:center;gap:12px;margin-bottom:22px}
+.icons span{width:56px;height:56px;border-radius:16px;background:var(--soft);display:grid;place-items:center}
+.icons svg{width:28px;height:28px;stroke:var(--vinho);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+h1{font-size:27px;line-height:1.25;font-weight:800;color:var(--navy)}
+h1 .tag{display:inline-block;margin:8px 0;background:var(--vinho);color:#fff;padding:6px 14px;border-radius:10px;box-shadow:0 6px 16px rgba(124,30,43,.22)}
+.bens{margin-top:24px;display:flex;flex-direction:column;gap:12px;text-align:left}
+.bens div{display:flex;gap:12px;align-items:flex-start;background:var(--soft);border-radius:14px;padding:13px 14px;font-size:14.5px;font-weight:600;color:var(--navy);line-height:1.4}
+.bens svg{flex:none;width:32px;height:32px;padding:6px;border-radius:9px;background:#fff;stroke:var(--vinho);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.note{margin-top:22px;font-size:13.5px;color:var(--txt2);line-height:1.5}
+.btn{display:flex;width:100%;align-items:center;justify-content:center;gap:10px;border:0;border-radius:14px;cursor:pointer;
+  padding:17px 22px;font-size:15px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;transition:filter .15s,transform .1s}
+.btn:active{transform:scale(.99)}
+.btn.pri{background:var(--vinho);color:#fff;box-shadow:0 10px 24px rgba(124,30,43,.25)}
+.btn.pri:hover{filter:brightness(1.1)}
+.btn.navy{background:var(--navy);color:#fff}
+.btn.ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line);text-transform:none;letter-spacing:0;font-weight:700}
+.btn.wa{background:#1FA855;color:#fff}
+.btn:disabled{background:var(--soft);color:var(--muted);box-shadow:none;cursor:not-allowed}
+.mt{margin-top:28px}
+.qn{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--vinho);margin-bottom:10px}
+h2{font-size:22px;line-height:1.3;font-weight:800;color:var(--navy)}
+.hint{margin-top:6px;font-size:13.5px;color:var(--txt2)}
+.field{margin-top:22px}
+.inp{width:100%;border:2px solid var(--line);border-radius:14px;padding:15px 16px;font-size:16px;color:var(--txt);outline:none;background:#fff}
+.inp:focus{border-color:var(--navy)}
+.tel{display:flex;border:2px solid var(--line);border-radius:14px;overflow:hidden}
+.tel:focus-within{border-color:var(--navy)}
+.tel span{display:flex;align-items:center;gap:6px;padding:0 14px;background:var(--card);border-right:1.5px solid var(--line);font-weight:700;font-size:15px;color:var(--navy)}
+.tel input{flex:1;border:0;outline:none;padding:15px 16px;font-size:16px;min-width:0}
+.small{margin-top:7px;font-size:12.5px;color:var(--muted)}
+.opts{margin-top:22px;display:flex;flex-direction:column;gap:12px}
+.opt{display:flex;align-items:center;gap:13px;text-align:left;width:100%;background:#fff;border:2px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;
+  font-size:15px;font-weight:600;color:var(--navy);transition:border-color .15s,background .15s}
+.opt:hover{border-color:#b9c4cf;background:var(--card)}
+.opt .dot{flex:none;width:22px;height:22px;border:2px solid var(--line);border-radius:50%;display:grid;place-items:center}
+.opt.multi .dot{border-radius:7px}
+.opt.sel{border-color:var(--vinho);background:#FBF4F5}
+.opt.sel .dot{border-color:var(--vinho);background:var(--vinho)}
+.opt.sel .dot::after{content:"";width:6px;height:10px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:translate(0,-1px) rotate(45deg)}
+.nav{margin-top:30px;display:flex;gap:12px}
+.nav .back{flex:none;width:auto;padding:16px 18px}
+.nav .go{flex:1}
+.box{margin-top:20px;background:var(--soft);border:1px solid var(--soft2);border-left:5px solid var(--vinho);border-radius:14px;padding:16px 18px}
+.box h3{font-size:15.5px;font-weight:800;color:var(--navy)}
+.box p{margin-top:4px;font-size:14px;color:var(--txt2);line-height:1.5}
+.lead{margin-top:10px;font-size:15px;color:var(--txt2);line-height:1.55}
+.lead b{color:var(--navy)}
+.cal{margin-top:20px;border:1.5px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+.cal iframe{display:block;width:100%;height:640px;border:0}
+.ou{display:flex;align-items:center;gap:12px;margin:22px 0 14px;color:var(--muted);font-size:13px;font-weight:700}
+.ou::before,.ou::after{content:"";flex:1;height:1px;background:var(--line)}
+.done{width:72px;height:72px;border-radius:50%;margin:10px auto 20px;background:var(--soft);display:grid;place-items:center}
+.done svg{width:36px;height:36px;stroke:var(--vinho);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+footer{text-align:center;font-size:12px;color:var(--muted);padding:0 16px 30px}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<header><div class="in"><img src="logo-md.png" alt="MD"><b><small>Tráfego pago</small>MD Soluções Digitais</b></div></header>
+<div class="prog"><div class="in"><div class="bar"><i id="pbar"></i></div><span id="ptxt">0%</span></div></div>
+
+<main>
+  <!-- BOAS-VINDAS -->
+  <section class="step on center" data-step="welcome">
+    <div class="icons">
+      <span><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></span>
+      <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></span>
+    </div>
+    <h1>Empresário de<br><span class="tag">Retífica de Cabeçote,</span><br>receba mais orçamentos<br>todos os dias!</h1>
+    <div class="bens">
+      <div><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>Apareça no Google quando clientes procuram por retífica de cabeçote na sua cidade.</div>
+      <div><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l5 3V9l5 3V5l4 2v14"/></svg>Atraia novos clientes e aumente o volume de serviços da sua retífica.</div>
+      <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>Estratégia de captação focada em quem já tem intenção de contratar o seu serviço.</div>
+    </div>
+    <p class="note">Exclusivo para empresas de retífica de cabeçote que desejam crescer e estão dispostas a investir na captação de clientes.</p>
+    <button class="btn pri mt" data-go="q1">Quero atrair mais clientes &rarr;</button>
+  </section>
+
+  <section class="step" data-step="q1">
+    <span class="qn">Pergunta 1 de 6</span>
+    <h2>Qual é o seu nome e sobrenome?</h2>
+    <div class="field"><input class="inp" id="nome" autocomplete="name" placeholder="Digite seu nome e sobrenome"></div>
+  </section>
+
+  <section class="step" data-step="q2">
+    <span class="qn">Pergunta 2 de 6</span>
+    <h2>Qual é o seu número de WhatsApp?</h2>
+    <div class="field"><div class="tel"><span>BR +55</span><input id="whats" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(11) 99999-9999"></div>
+    <p class="small">Digite o WhatsApp com DDD.</p></div>
+  </section>
+
+  <section class="step" data-step="q3">
+    <span class="qn">Pergunta 3 de 6</span>
+    <h2>Qual é o Instagram ou site da sua empresa?</h2>
+    <div class="field"><input class="inp" id="insta" placeholder="@instagram ou www.suaempresa.com.br"></div>
+    <div class="field" style="margin-top:14px"><input class="inp" id="cidade" autocomplete="address-level2" placeholder="Cidade da retífica (ex.: Guarulhos - SP)"></div>
+  </section>
+
+  <section class="step" data-step="q4">
+    <span class="qn">Pergunta 4 de 6</span>
+    <h2>Qual tipo de retífica sua empresa realiza?</h2>
+    <p class="hint">Selecione uma ou mais opções.</p>
+    <div class="opts" data-key="tipos" data-multi="1">
+      <button class="opt multi" data-v="Carros"><span class="dot"></span>Retífica de cabeçote para carros</button>
+      <button class="opt multi" data-v="Caminhões"><span class="dot"></span>Retífica de cabeçote para caminhões</button>
+      <button class="opt multi" data-v="Motos"><span class="dot"></span>Retífica de cabeçote para motos</button>
+      <button class="opt multi" data-v="Máquinas agrícolas e pesadas"><span class="dot"></span>Máquinas agrícolas e pesadas</button>
+    </div>
+  </section>
+
+  <section class="step" data-step="q5">
+    <span class="qn">Pergunta 5 de 6</span>
+    <h2>Qual é o faturamento médio mensal da sua empresa?</h2>
+    <div class="opts" data-key="faturamento">
+      <button class="opt" data-v="Até R$ 50 mil"><span class="dot"></span>Até R$ 50 mil</button>
+      <button class="opt" data-v="De R$ 50 mil a R$ 100 mil"><span class="dot"></span>De R$ 50 mil a R$ 100 mil</button>
+      <button class="opt" data-v="De R$ 100 mil a R$ 300 mil"><span class="dot"></span>De R$ 100 mil a R$ 300 mil</button>
+      <button class="opt" data-v="De R$ 300 mil a R$ 500 mil"><span class="dot"></span>De R$ 300 mil a R$ 500 mil</button>
+      <button class="opt" data-v="Acima de R$ 500 mil"><span class="dot"></span>Acima de R$ 500 mil</button>
+    </div>
+  </section>
+
+  <section class="step" data-step="q6">
+    <span class="qn">Pergunta 6 de 6</span>
+    <h2>Sem contar a gestão, quanto você está disposto a investir por mês em anúncios para atrair mais clientes para a sua retífica?</h2>
+    <div class="opts" data-key="investimento">
+      <button class="opt" data-v="De R$ 3 mil a R$ 5 mil" data-q="1"><span class="dot"></span>Posso investir de R$ 3 mil a R$ 5 mil por mês.</button>
+      <button class="opt" data-v="Acima de R$ 5 mil" data-q="1"><span class="dot"></span>Posso investir acima de R$ 5 mil por mês.</button>
+      <button class="opt" data-v="Sem orçamento definido" data-q="0"><span class="dot"></span>Ainda não tenho orçamento definido.</button>
+      <button class="opt" data-v="Não pretende investir" data-q="-1"><span class="dot"></span>Não pretendo investir neste momento.</button>
+    </div>
+  </section>
+
+  <!-- ALINHAMENTO (sem orçamento definido) -->
+  <section class="step" data-step="orientacao">
+    <h2>Antes de agendarmos, precisamos alinhar uma informação importante.</h2>
+    <p class="lead">Para atrair novos clientes para a sua retífica pelo Google, existem <b>dois investimentos diferentes</b>:</p>
+    <div class="box"><h3>1. Investimento em anúncios</h3><p>É o valor pago direto ao Google Ads para a sua empresa aparecer nas pesquisas de quem procura retífica. O recomendado para começar gira em torno de <b class="verba"></b> por mês.</p></div>
+    <div class="box"><h3>2. Gestão de tráfego</h3><p>É o valor pago à MD Soluções Digitais pelo planejamento, criação, acompanhamento e otimização das campanhas.</p></div>
+    <button class="btn pri mt" data-go="agendamento" data-ok="1">Entendi, quero seguir com o agendamento &rarr;</button>
+    <button class="btn ghost" style="margin-top:12px" data-go="agradecimento" data-ok="0">Entendi, mas agora não é o meu momento</button>
+  </section>
+
+  <!-- AGENDAMENTO -->
+  <section class="step" data-step="agendamento">
+    <span class="qn">98% preenchido</span>
+    <h2>Estamos quase lá! Escolha o melhor horário para conversar com a nossa equipe.</h2>
+    <div class="cal" id="calWrap"><iframe id="calFrame" title="Agendamento" loading="lazy"></iframe></div>
+    <div class="ou" id="ouSep">ou, se preferir</div>
+    <a class="btn wa" id="waBtn" target="_blank" rel="noopener">Falar agora no WhatsApp</a>
+    <button class="btn ghost" style="margin-top:12px" data-go="final">Já agendei meu horário</button>
+  </section>
+
+  <section class="step center" data-step="agradecimento">
+    <div class="done"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
+    <h2>Tudo bem!</h2>
+    <p class="lead">Respeitamos o seu momento e ficamos à disposição caso isso mude. Obrigado pelo seu tempo!</p>
+  </section>
+
+  <section class="step center" data-step="final">
+    <div class="done"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
+    <h2>Cadastro concluído!</h2>
+    <p class="lead">Suas informações foram recebidas. A nossa equipe vai analisar o perfil da sua retífica e mostrar na reunião como podemos trazer mais clientes pelo Google.</p>
+    <a class="btn wa mt" id="waBtn2" target="_blank" rel="noopener">Falar com a gente no WhatsApp</a>
+  </section>
+
+  <div class="nav" id="nav" style="display:none">
+    <button class="btn ghost back" id="back">&larr; Voltar</button>
+    <button class="btn pri go" id="next" disabled>Avançar &rarr;</button>
+  </div>
+</main>
+<footer>MD Soluções Digitais · <a href="https://md.onlecompany.com/privacidade" target="_blank" rel="noopener">Política de privacidade</a></footer>
+
+<script>
+(function(){
+  const C = window.CFG;
+  const Q = ["q1","q2","q3","q4","q5","q6"];
+  const PROG = {welcome:0,q1:14,q2:28,q3:42,q4:56,q5:70,q6:84,orientacao:90,agendamento:98,agradecimento:100,final:100};
+  const $ = s => document.querySelector(s);
+  const uid = () => (crypto.randomUUID ? crypto.randomUUID() : Date.now()+"-"+Math.random().toString(16).slice(2));
+
+  // origem do clique: UTMs e click IDs
+  const P = new URLSearchParams(location.search);
+  const origem = {};
+  ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","fbclid","gclid"].forEach(k => { if (P.get(k)) origem[k] = P.get(k); });
+  try { const prev = JSON.parse(localStorage.getItem("md_origem") || "{}"); for (const k in prev) if (!origem[k]) origem[k] = prev[k]; localStorage.setItem("md_origem", JSON.stringify(origem)); } catch(e) {}
+
+  const D = { id: uid(), nome:"", whatsapp:"", instagram:"", cidade:"", tipos:[], faturamento:"", investimento:"", qualificacao:"", status:"iniciou", ...origem,
+              pagina: location.href.split("?")[0], dispositivo: /Mobile|Android|iPhone/i.test(navigator.userAgent) ? "celular" : "computador" };
+
+  // pixel
+  if (C.PIXEL_ID) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', C.PIXEL_ID); fbq('track', 'PageView');
+  }
+  const track = (ev, extra) => { try { if (window.fbq) fbq('track', ev, extra || {}, { eventID: D.id + "-" + ev }); } catch(e) {} };
+
+  // grava na planilha (mesmo id atualiza a mesma linha)
+  function salvar(){
+    if (!C.ENDPOINT) { console.warn("ENDPOINT não configurado", D); return; }
+    const body = JSON.stringify({ ...D, tipos: D.tipos.join(", ") });
+    try {
+      if (navigator.sendBeacon && navigator.sendBeacon(C.ENDPOINT, new Blob([body], {type:"text/plain;charset=utf-8"}))) return;
+    } catch(e) {}
+    fetch(C.ENDPOINT, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"}, body, keepalive:true }).catch(()=>{});
+  }
+
+  let cur = "welcome";
+  function show(step){
+    cur = step;
+    document.querySelectorAll(".step").forEach(s => s.classList.toggle("on", s.dataset.step === step));
+    $("#pbar").style.width = PROG[step] + "%"; $("#ptxt").textContent = PROG[step] + "%";
+    $("#nav").style.display = Q.includes(step) ? "flex" : "none";
+    validar();
+    window.scrollTo({top:0, behavior:"smooth"});
+    const f = document.querySelector('.step.on input'); if (f) setTimeout(() => f.focus({preventScroll:true}), 250);
+  }
+
+  function validar(){
+    const ok = {
+      q1: D.nome.trim().split(/\s+/).filter(Boolean).length >= 2,
+      q2: D.whatsapp.replace(/\D/g,"").length >= 10,
+      q3: D.instagram.trim().length > 1 && D.cidade.trim().length > 1,
+      q4: D.tipos.length > 0, q5: !!D.faturamento, q6: !!D.investimento
+    }[cur];
+    $("#next").disabled = !ok;
+    return ok;
+  }
+
+  function avancar(){
+    if (!validar()) return;
+    const i = Q.indexOf(cur);
+    if (cur === "q2") { D.status = "deixou contato"; salvar(); }
+    if (cur !== "q6") { show(Q[i+1]); return; }
+    const q = document.querySelector('[data-key="investimento"] .opt.sel').dataset.q;
+    if (q === "1") { D.qualificacao = "qualificado"; D.status = "foi para agendamento"; track("Lead", {content_name:"retifica"}); salvar(); show("agendamento"); }
+    else if (q === "0") { D.qualificacao = "sem orçamento definido"; D.status = "viu alinhamento"; salvar(); show("orientacao"); }
+    else { D.qualificacao = "sem intenção"; D.status = "encerrou"; salvar(); show("agradecimento"); }
+  }
+
+  // campos
+  $("#nome").addEventListener("input", e => { D.nome = e.target.value; validar(); });
+  $("#insta").addEventListener("input", e => { D.instagram = e.target.value; validar(); });
+  $("#cidade").addEventListener("input", e => { D.cidade = e.target.value; validar(); });
+  $("#whats").addEventListener("input", e => {
+    const d = e.target.value.replace(/\D/g,"").slice(0,11);
+    e.target.value = d.length <= 2 ? (d ? "("+d : "") : d.length <= 6 ? `(${d.slice(0,2)}) ${d.slice(2)}` : d.length <= 10 ? `(${d.slice(0,2)}) ${d.slice(2,6)}-${d.slice(6)}` : `(${d.slice(0,2)}) ${d.slice(2,7)}-${d.slice(7)}`;
+    D.whatsapp = "55" + d; validar();
+  });
+  document.querySelectorAll(".opts").forEach(g => {
+    g.addEventListener("click", e => {
+      const b = e.target.closest(".opt"); if (!b) return;
+      if (g.dataset.multi) { b.classList.toggle("sel"); D[g.dataset.key] = [...g.querySelectorAll(".sel")].map(x => x.dataset.v); }
+      else { g.querySelectorAll(".opt").forEach(x => x.classList.remove("sel")); b.classList.add("sel"); D[g.dataset.key] = b.dataset.v; }
+      validar();
+      if (!g.dataset.multi) setTimeout(avancar, 280);
+    });
+  });
+  document.querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => {
+    const go = b.dataset.go;
+    if (cur === "orientacao") { D.status = b.dataset.ok === "1" ? "aceitou alinhamento, foi para agendamento" : "recusou após alinhamento"; salvar(); if (b.dataset.ok === "1") track("Lead", {content_name:"retifica"}); }
+    if (go === "final" && cur === "agendamento") { D.status = "disse que agendou"; salvar(); track("Schedule"); }
+    if (go === "q1") track("ViewContent");
+    show(go);
+  }));
+  $("#next").addEventListener("click", avancar);
+  $("#back").addEventListener("click", () => { const i = Q.indexOf(cur); show(i > 0 ? Q[i-1] : "welcome"); });
+  document.addEventListener("keydown", e => { if (e.key === "Enter" && Q.includes(cur)) { e.preventDefault(); avancar(); } });
+
+  // agendamento e WhatsApp
+  document.querySelectorAll(".verba").forEach(x => x.textContent = C.VERBA_MINIMA);
+  if (C.CALENDAR_URL) { $("#calFrame").src = C.CALENDAR_URL + (C.CALENDAR_URL.includes("?") ? "&" : "?") + "gv=true"; }
+  else { $("#calWrap").style.display = "none"; $("#ouSep").style.display = "none"; document.querySelector('[data-go="final"]').style.display = "none"; }
+  function waLink(){
+    const t = `Olá! Acabei de preencher o formulário da retífica.\nNome: ${D.nome}\nEmpresa: ${D.instagram}\nCidade: ${D.cidade}\nTipo: ${D.tipos.join(", ")}\nFaturamento: ${D.faturamento}\nInvestimento em anúncios: ${D.investimento}`;
+    return `https://wa.me/${C.WHATSAPP}?text=${encodeURIComponent(t)}`;
+  }
+  ["#waBtn","#waBtn2"].forEach(s => $(s).addEventListener("click", e => { e.currentTarget.href = waLink(); if (D.status.indexOf("whatsapp") < 0) { D.status += " + chamou no whatsapp"; salvar(); track("Contact"); } }));
+})();
+</script>
+</body>
+</html>
