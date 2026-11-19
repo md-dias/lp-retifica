@@ -128,27 +128,27 @@ footer a{color:var(--muted)}
   </section>
 
   <section class="step" data-step="q1">
-    <span class="qn">Pergunta 1 de 6</span>
+    <span class="qn">Pergunta 1 de 8</span>
     <h2>Qual é o seu nome e sobrenome?</h2>
     <div class="field"><input class="inp" id="nome" autocomplete="name" placeholder="Digite seu nome e sobrenome"></div>
   </section>
 
   <section class="step" data-step="q2">
-    <span class="qn">Pergunta 2 de 6</span>
+    <span class="qn">Pergunta 2 de 8</span>
     <h2>Qual é o seu número de WhatsApp?</h2>
     <div class="field"><div class="tel"><span>BR +55</span><input id="whats" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(11) 99999-9999"></div>
     <p class="small">Digite o WhatsApp com DDD.</p></div>
   </section>
 
   <section class="step" data-step="q3">
-    <span class="qn">Pergunta 3 de 6</span>
+    <span class="qn">Pergunta 3 de 8</span>
     <h2>Qual é o Instagram ou site da sua empresa?</h2>
     <div class="field"><input class="inp" id="insta" placeholder="@instagram ou www.suaempresa.com.br"></div>
     <div class="field" style="margin-top:14px"><input class="inp" id="cidade" autocomplete="address-level2" placeholder="Cidade da retífica (ex.: Guarulhos - SP)"></div>
   </section>
 
   <section class="step" data-step="q4">
-    <span class="qn">Pergunta 4 de 6</span>
+    <span class="qn">Pergunta 4 de 8</span>
     <h2>Qual tipo de retífica sua empresa realiza?</h2>
     <p class="hint">Selecione uma ou mais opções.</p>
     <div class="opts" data-key="tipos" data-multi="1">
@@ -160,7 +160,7 @@ footer a{color:var(--muted)}
   </section>
 
   <section class="step" data-step="q5">
-    <span class="qn">Pergunta 5 de 6</span>
+    <span class="qn">Pergunta 5 de 8</span>
     <h2>Qual é o faturamento médio mensal da sua empresa?</h2>
     <div class="opts" data-key="faturamento">
       <button class="opt" data-v="Até R$ 50 mil"><span class="dot"></span>Até R$ 50 mil</button>
@@ -172,7 +172,25 @@ footer a{color:var(--muted)}
   </section>
 
   <section class="step" data-step="q6">
-    <span class="qn">Pergunta 6 de 6</span>
+    <span class="qn">Pergunta 6 de 8</span>
+    <h2>Você já sabe como funciona a contratação de uma gestão de tráfego?</h2>
+    <div class="opts" data-key="conhece">
+      <button class="opt" data-v="Sim" data-q="1"><span class="dot"></span>Sim, já sei como funciona.</button>
+      <button class="opt" data-v="Não" data-q="0"><span class="dot"></span>Não, quero entender.</button>
+    </div>
+  </section>
+
+  <!-- EXPLICAÇÃO (não conhece gestão de tráfego) -->
+  <section class="step" data-step="explica">
+    <h2>Funciona igual a contratar um pintor.</h2>
+    <p class="lead">Quando você chama um pintor, paga duas coisas: <b>a mão de obra</b> dele e <b>a tinta</b>. Sem tinta não tem pintura, e sem pintor a tinta fica parada na lata.</p>
+    <div class="box"><h3>A mão de obra: gestão dos anúncios</h3><p>É o valor pago à MD Soluções Digitais para planejar, criar, acompanhar e ajustar as campanhas todos os dias, para que cada real investido traga cliente para a sua retífica.</p></div>
+    <div class="box"><h3>A tinta: investimento nas plataformas</h3><p>É o valor pago direto ao Google (ou à Meta), no seu cartão, para os seus anúncios aparecerem para quem está procurando retífica. Esse dinheiro não passa pela gente.</p></div>
+    <button class="btn pri mt" data-go="q7">Entendi, vamos seguir &rarr;</button>
+  </section>
+
+  <section class="step" data-step="q7">
+    <span class="qn">Pergunta 7 de 8</span>
     <h2>Sem contar a gestão, quanto você está disposto a investir por mês em anúncios para atrair mais clientes para a sua retífica?</h2>
     <div class="opts" data-key="investimento">
       <button class="opt" data-v="De R$ 1.500 a R$ 3 mil" data-q="1"><span class="dot"></span>Posso investir de R$ 1.500 a R$ 3 mil por mês.</button>
@@ -180,6 +198,17 @@ footer a{color:var(--muted)}
       <button class="opt" data-v="Acima de R$ 5 mil" data-q="1"><span class="dot"></span>Posso investir acima de R$ 5 mil por mês.</button>
       <button class="opt" data-v="Sem orçamento definido" data-q="0"><span class="dot"></span>Ainda não tenho orçamento definido.</button>
       <button class="opt" data-v="Não pretende investir" data-q="-1"><span class="dot"></span>Não pretendo investir neste momento.</button>
+    </div>
+  </section>
+
+  <section class="step" data-step="q8">
+    <span class="qn">Pergunta 8 de 8</span>
+    <h2>Os nossos pacotes de gestão (a mão de obra) variam de R$ 850 a R$ 1.500 por mês, conforme o tamanho da operação. Esse valor faz sentido para você?</h2>
+    <p class="hint">Esse valor é separado do investimento pago direto às plataformas.</p>
+    <div class="opts" data-key="pacote">
+      <button class="opt" data-v="Concorda com os valores" data-q="1"><span class="dot"></span>Sim, faz sentido para mim.</button>
+      <button class="opt" data-v="Quer entender melhor na reunião" data-q="1"><span class="dot"></span>Quero entender melhor o que está incluso.</button>
+      <button class="opt" data-v="Fora do orçamento" data-q="-1"><span class="dot"></span>Não, está fora do meu orçamento agora.</button>
     </div>
   </section>
 
@@ -232,8 +261,8 @@ footer a{color:var(--muted)}
 <script>
 (function(){
   const C = window.CFG;
-  const Q = ["q1","q2","q3","q4","q5","q6"];
-  const PROG = {welcome:0,q1:14,q2:28,q3:42,q4:56,q5:70,q6:84,orientacao:90,agendamento:98,agradecimento:100,final:100};
+  const Q = ["q1","q2","q3","q4","q5","q6","q7","q8"];
+  const PROG = {welcome:0,q1:10,q2:20,q3:30,q4:40,q5:50,q6:60,explica:65,q7:72,q8:84,orientacao:90,agendamento:98,agradecimento:100,final:100};
   const $ = s => document.querySelector(s);
   const uid = () => (crypto.randomUUID ? crypto.randomUUID() : Date.now()+"-"+Math.random().toString(16).slice(2));
 
@@ -243,7 +272,7 @@ footer a{color:var(--muted)}
   ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","fbclid","gclid"].forEach(k => { if (P.get(k)) origem[k] = P.get(k); });
   try { const prev = JSON.parse(localStorage.getItem("md_origem") || "{}"); for (const k in prev) if (!origem[k]) origem[k] = prev[k]; localStorage.setItem("md_origem", JSON.stringify(origem)); } catch(e) {}
 
-  const D = { id: uid(), nome:"", whatsapp:"", instagram:"", cidade:"", tipos:[], faturamento:"", investimento:"", qualificacao:"", status:"iniciou", ...origem,
+  const D = { id: uid(), nome:"", whatsapp:"", instagram:"", cidade:"", tipos:[], faturamento:"", conhece:"", investimento:"", pacote:"", qualificacao:"", status:"iniciou", ...origem,
               pagina: location.href.split("?")[0], dispositivo: /Mobile|Android|iPhone/i.test(navigator.userAgent) ? "celular" : "computador" };
 
   // pixel
@@ -259,14 +288,15 @@ footer a{color:var(--muted)}
     return { funil: C.FUNIL, id: D.id, nome: D.nome, whatsapp: D.whatsapp, email: D.email || "", empresa: D.instagram, cidade: D.cidade,
       qualificacao: D.qualificacao, status_form: D.status, pagina: D.pagina, fbc: ck('_fbc'), fbp: ck('_fbp'),
       utm_source: D.utm_source, utm_medium: D.utm_medium, utm_campaign: D.utm_campaign, utm_content: D.utm_content, utm_term: D.utm_term, fbclid: D.fbclid, gclid: D.gclid,
-      respostas: { "Tipo de retífica": D.tipos.join(", "), "Faturamento mensal": D.faturamento, "Investimento em anúncios": D.investimento, "Dispositivo": D.dispositivo } };
+      respostas: { "Tipo de retífica": D.tipos.join(", "), "Faturamento mensal": D.faturamento, "Conhece gestão de tráfego": D.conhece, "Investimento em anúncios": D.investimento, "Pacote de gestão (R$ 850 a 1.500)": D.pacote, "Dispositivo": D.dispositivo } };
   }
   function salvar(){
     fetch(C.API + "/api/p/lead", { method:"POST", headers:{"Content-Type":"text/plain;charset=utf-8"}, body: JSON.stringify(payload()), keepalive:true }).catch(()=>{});
   }
 
-  let cur = "welcome";
-  let show = function(step){
+  let cur = "welcome"; const HIST = [];
+  let show = function(step, voltando){
+    if (!voltando && step !== cur) HIST.push(cur);
     cur = step;
     document.querySelectorAll(".step").forEach(s => s.classList.toggle("on", s.dataset.step === step));
     $("#pbar").style.width = PROG[step] + "%"; $("#ptxt").textContent = PROG[step] + "%";
@@ -281,7 +311,7 @@ footer a{color:var(--muted)}
       q1: D.nome.trim().split(/\s+/).filter(Boolean).length >= 2,
       q2: D.whatsapp.replace(/\D/g,"").length >= 10,
       q3: D.instagram.trim().length > 1 && D.cidade.trim().length > 1,
-      q4: D.tipos.length > 0, q5: !!D.faturamento, q6: !!D.investimento
+      q4: D.tipos.length > 0, q5: !!D.faturamento, q6: !!D.conhece, q7: !!D.investimento, q8: !!D.pacote
     }[cur];
     $("#next").disabled = !ok;
     return ok;
@@ -291,8 +321,12 @@ footer a{color:var(--muted)}
     if (!validar()) return;
     const i = Q.indexOf(cur);
     if (cur === "q2") { D.status = "deixou contato"; salvar(); }
-    if (cur !== "q6") { show(Q[i+1]); return; }
-    const q = document.querySelector('[data-key="investimento"] .opt.sel').dataset.q;
+    const sel = k => document.querySelector('[data-key="'+k+'"] .opt.sel').dataset.q;
+    if (cur === "q6") { show(sel("conhece") === "0" ? "explica" : "q7"); return; }
+    if (cur === "q7" && sel("investimento") === "-1") { D.qualificacao = "sem intenção"; D.status = "encerrou"; salvar(); show("agradecimento"); return; }
+    if (cur !== "q8") { show(Q[i+1]); return; }
+    if (sel("pacote") === "-1") { D.qualificacao = "recusou valor da gestão"; D.status = "encerrou"; salvar(); show("agradecimento"); return; }
+    const q = sel("investimento");
     if (q === "1") { D.qualificacao = "qualificado"; D.status = "foi para agendamento"; track("Lead", {content_name:"retifica"}); salvar(); show("agendamento"); }
     else if (q === "0") { D.qualificacao = "sem orçamento definido"; D.status = "viu alinhamento"; salvar(); show("orientacao"); }
     else { D.qualificacao = "sem intenção"; D.status = "encerrou"; salvar(); show("agradecimento"); }
@@ -323,7 +357,7 @@ footer a{color:var(--muted)}
     show(go);
   }));
   $("#next").addEventListener("click", avancar);
-  $("#back").addEventListener("click", () => { const i = Q.indexOf(cur); show(i > 0 ? Q[i-1] : "welcome"); });
+  $("#back").addEventListener("click", () => show(HIST.pop() || "welcome", true));
   document.addEventListener("keydown", e => { if (e.key === "Enter" && Q.includes(cur)) { e.preventDefault(); avancar(); } });
 
   // agendamento e WhatsApp
@@ -367,7 +401,7 @@ footer a{color:var(--muted)}
       $("#agErr").textContent = e.message; btn.disabled = false; btn.textContent = "Confirmar agendamento"; carregarAgenda();
     }
   });
-  const _show = show; show = function(step){ _show(step); if (step === "agendamento" && !HOR) carregarAgenda(); };
+  const _show = show; show = function(step, v){ _show(step, v); if (step === "agendamento" && !HOR) carregarAgenda(); };
   function waLink(){
     const t = `Olá! Acabei de preencher o formulário da retífica.\nNome: ${D.nome}\nEmpresa: ${D.instagram}\nCidade: ${D.cidade}\nTipo: ${D.tipos.join(", ")}\nFaturamento: ${D.faturamento}\nInvestimento em anúncios: ${D.investimento}`;
     return `https://wa.me/${C.WHATSAPP}?text=${encodeURIComponent(t)}`;
