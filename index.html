@@ -280,13 +280,15 @@ footer a{color:var(--muted)}
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', C.PIXEL_ID); fbq('track', 'PageView');
   }
+  // EndForm: terminou o quiz (qualquer resposta final). Evento personalizado usado na otimização da campanha.
+  const endform = () => { if (D.fim) return; D.fim = 1; try { if (window.fbq) fbq('trackCustom', 'EndForm', {content_name:"retifica"}, { eventID: D.id + "-EndForm" }); } catch(e) {} };
   const track = (ev, extra) => { try { if (window.fbq) fbq('track', ev, extra || {}, { eventID: D.id + "-" + ev }); } catch(e) {} };
 
   // grava no MD High Level (o mesmo id atualiza o mesmo lead)
   const ck = n => { const m = document.cookie.match(new RegExp('(?:^|; )' + n + '=([^;]*)')); return m ? decodeURIComponent(m[1]) : ''; };
   function payload(){
     return { funil: C.FUNIL, id: D.id, nome: D.nome, whatsapp: D.whatsapp, email: D.email || "", empresa: D.instagram, cidade: D.cidade,
-      qualificacao: D.qualificacao, status_form: D.status, pagina: D.pagina, fbc: ck('_fbc'), fbp: ck('_fbp'),
+      qualificacao: D.qualificacao, status_form: D.status, fim: D.fim ? 1 : 0, pagina: D.pagina, fbc: ck('_fbc'), fbp: ck('_fbp'),
       utm_source: D.utm_source, utm_medium: D.utm_medium, utm_campaign: D.utm_campaign, utm_content: D.utm_content, utm_term: D.utm_term, fbclid: D.fbclid, gclid: D.gclid,
       respostas: { "Tipo de retífica": D.tipos.join(", "), "Faturamento mensal": D.faturamento, "Conhece gestão de tráfego": D.conhece, "Investimento em anúncios": D.investimento, "Pacote de gestão (R$ 850 a 1.500)": D.pacote, "Dispositivo": D.dispositivo } };
   }
@@ -323,8 +325,9 @@ footer a{color:var(--muted)}
     if (cur === "q2") { D.status = "deixou contato"; salvar(); }
     const sel = k => document.querySelector('[data-key="'+k+'"] .opt.sel').dataset.q;
     if (cur === "q6") { show(sel("conhece") === "0" ? "explica" : "q7"); return; }
-    if (cur === "q7" && sel("investimento") === "-1") { D.qualificacao = "sem intenção"; D.status = "encerrou"; salvar(); show("agradecimento"); return; }
+    if (cur === "q7" && sel("investimento") === "-1") { endform(); D.qualificacao = "sem intenção"; D.status = "encerrou"; salvar(); show("agradecimento"); return; }
     if (cur !== "q8") { show(Q[i+1]); return; }
+    endform();
     if (sel("pacote") === "-1") { D.qualificacao = "recusou valor da gestão"; D.status = "encerrou"; salvar(); show("agradecimento"); return; }
     const q = sel("investimento");
     if (q === "1") { D.qualificacao = "qualificado"; D.status = "foi para agendamento"; track("Lead", {content_name:"retifica"}); salvar(); show("agendamento"); }
