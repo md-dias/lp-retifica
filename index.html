@@ -409,7 +409,7 @@ footer a{color:var(--muted)}
     const t = `Olá! Acabei de preencher o formulário da retífica.\nNome: ${D.nome}\nEmpresa: ${D.instagram}\nCidade: ${D.cidade}\nTipo: ${D.tipos.join(", ")}\nFaturamento: ${D.faturamento}\nInvestimento em anúncios: ${D.investimento}`;
     return `https://wa.me/${C.WHATSAPP}?text=${encodeURIComponent(t)}`;
   }
-  ["#waBtn","#waBtn2"].forEach(s => $(s).addEventListener("click", e => { e.currentTarget.href = waLink(); if (D.status.indexOf("whatsapp") < 0) { D.status += " + chamou no whatsapp"; salvar(); track("Contact"); } }));
+  ["#waBtn","#waBtn2"].forEach(s => $(s).addEventListener("click", e => { e.currentTarget.href = waLink(); if (D.status.indexOf("whatsapp") < 0 && (D.nome || D.whatsapp)) { D.status += " + chamou no whatsapp"; salvar(); track("Contact"); } }));
 })();
 </script>
 </body>
